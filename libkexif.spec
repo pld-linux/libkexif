@@ -4,13 +4,13 @@ Summary(pl):	Biblioteka obs³ugi danych z exif w KDE
 Name:		libkexif
 Version:	0.1.0
 Release:	0.%{_snap}1
-License:	LGPL
+License:	GPL v2+
 Group:		Libraries
 # From KDE cvs generated using
 # 'cvs://pld/kde/package-kdeapp_snap.sh libkipi kdeextragear-libs-1'
 Source0:	%{name}-%{_snap}.tar.bz2
 # Source0-md5:	c1bd47222e68378cf1931ce2330840b9
-URL:		http://webcvs.kde.org/kdeextragear-libs-1/libkexif
+URL:		http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdeextragear-libs-1/libkexif/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libexif-devel
@@ -26,8 +26,10 @@ libexif. It also supports the modification of a few attributes in a
 safe way that preserves all other EXIF information in the file.
 
 %description -l pl
-Libkexif to biblioteka do manipulacji danymi EXIF zawartymi w obrazach. Aktualnie wspiera podgl±d wszystkich informacji via libexif oraz modyfikacjê kilku atrybutów przy zachowaniu niezmienno¶ci pozosta³ych.
-
+Libkexif to biblioteka do manipulacji danymi EXIF zawartymi w
+obrazach. Aktualnie wspiera podgl±d wszystkich informacji poprzez
+libexif oraz modyfikacjê kilku atrybutów przy zachowaniu niezmienno¶ci
+pozosta³ych.
 
 %package devel
 Summary:	Header files for libkexif development
@@ -69,12 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.?.?.?
-#%{_datadir}/apps/kipi
-#%{_datadir}/servicetypes/kipiplugin.desktop
-#%{_iconsdir}/hicolor/*x*/*/*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/libkexif
 %{_pkgconfigdir}/libkexif.pc
