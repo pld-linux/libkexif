@@ -7,7 +7,7 @@ License:	GPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/digikam/%{name}-%{version}.tar.bz2
 # Source0-md5:	28a7eb727d6a884343ce8cbe061cb58f
-URL:		http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdeextragear-libs-1/libkexif/
+URL:		http://digikam.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
