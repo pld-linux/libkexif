@@ -9,7 +9,7 @@ Group:		Libraries
 # From KDE cvs generated using
 # 'cvs://pld/kde/package-kdeapp_snap.sh libkipi kdeextragear-libs-1'
 Source0:	%{name}-%{_snap}.tar.bz2
-# Source0-md5:	82af5427f4a3fe5fb33b3e03ee8e9f38
+# Source0-md5:	c1bd47222e68378cf1931ce2330840b9
 URL:		http://webcvs.kde.org/kdeextragear-libs-1/libkexif
 BuildRequires:	autoconf
 BuildRequires:	automake
