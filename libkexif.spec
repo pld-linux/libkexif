@@ -13,8 +13,8 @@ Source0:	%{name}-%{_snap}.tar.bz2
 URL:		http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdeextragear-libs-1/libkexif/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libexif-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
+BuildRequires:	libexif-devel >= 0.6.9
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	unsermake >= 040805
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +36,8 @@ Summary:	Header files for libkexif development
 Summary(pl):	Pliki nag³ówkowe dla programistów u¿ywaj±cych libkexif
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	libexif-devel
+Requires:	kdelibs-devel >= 9:3.2.0
+Requires:	libexif-devel >= 0.6.9
 
 %description devel
 Header files for libkexif  development.
@@ -70,10 +71,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc libkexif/{AUTHORS,ChangeLog,README}
 %attr(755,root,root) %{_libdir}/lib*.so.?.?.?
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/libkexif
 %{_pkgconfigdir}/libkexif.pc
