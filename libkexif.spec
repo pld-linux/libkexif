@@ -1,15 +1,12 @@
-%define		_snap	040920
 Summary:	KDE EXIF Data Handling Library 
 Summary(pl):	Biblioteka obs³ugi danych z exif w KDE
 Name:		libkexif
-Version:	0.1.0
-Release:	0.%{_snap}1
+Version:	0.1
+Release:	0.1
 License:	GPL v2+
 Group:		Libraries
-# From KDE cvs generated using
-# 'cvs://pld/kde/package-kdeapp_snap.sh libkipi kdeextragear-libs-1'
-Source0:	%{name}-%{_snap}.tar.bz2
-# Source0-md5:	c1bd47222e68378cf1931ce2330840b9
+Source0:	ftp://ftp.kde.org/pub/kde/unstable/apps/KDE3.x/graphics/%{name}-%{version}.tar.bz2
+# Source0-md5:	2d1ed6285fd9490c72327ff6dacd9185
 URL:		http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdeextragear-libs-1/libkexif/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -46,7 +43,7 @@ Header files for libkexif  development.
 Pliki nag³ówkowe dla programistów u¿ywaj±cych libkexif.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 cp -f %{_datadir}/automake/config.sub admin
@@ -54,7 +51,8 @@ export UNSERMAKE=%{_datadir}/unsermake/unsermake
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
-	--with-qt-libraries=%{_libdir}
+	--with-qt-libraries=%{_libdir} \
+	--enable-final
 
 %{__make}
 
@@ -66,12 +64,14 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc libkexif/{AUTHORS,ChangeLog,README}
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/lib*.so.?.?.?
 
 %files devel
