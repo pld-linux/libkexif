@@ -1,12 +1,12 @@
 Summary:	KDE EXIF Data Handling Library 
 Summary(pl):	Biblioteka obs³ugi danych z exif w KDE
 Name:		libkexif
-Version:	0.1
-Release:	1
+Version:	0.2.1
+Release:	0.1
 License:	GPL v2+
 Group:		Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/apps/KDE3.x/graphics/%{name}-%{version}.tar.bz2
-# Source0-md5:	2d1ed6285fd9490c72327ff6dacd9185
+Source0:	http://dl.sourceforge.net/digikam/%{name}-%{version}.tar.bz2
+# Source0-md5:	28a7eb727d6a884343ce8cbe061cb58f
 URL:		http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdeextragear-libs-1/libkexif/
 BuildRequires:	autoconf
 BuildRequires:	automake
