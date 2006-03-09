@@ -51,8 +51,9 @@ cp -f %{_datadir}/automake/config.sub admin
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
-	--with-qt-libraries=%{_libdir} \
-	--enable-final
+	--disable-rpath \
+	--enable-final \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
