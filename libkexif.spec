@@ -15,7 +15,6 @@ BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	libexif-devel >= 0.6.9
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.164
-BuildRequires:	unsermake >= 051225
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,14 +48,13 @@ Pliki nag³ówkowe dla programistów u¿ywaj±cych libkexif.
 
 %build
 cp -f %{_datadir}/automake/config.sub admin
-export UNSERMAKE=%{_datadir}/unsermake/unsermake
-%{__unsermake} -f admin/Makefile.common cvs
+%{__make} -f admin/Makefile.common cvs
 
 %configure \
 	--with-qt-libraries=%{_libdir} \
 	--enable-final
 
-%{__unsermake}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
