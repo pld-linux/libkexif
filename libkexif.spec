@@ -1,5 +1,5 @@
 Summary:	KDE EXIF Data Handling Library 
-Summary(pl):	Biblioteka obs≥ugi danych z exif w KDE
+Summary(pl.UTF-8):   Biblioteka obs≈Çugi danych z exif w KDE
 Name:		libkexif
 Version:	0.2.5
 Release:	1
@@ -23,15 +23,15 @@ images. It currently supports viewing of all EXIF information via
 libexif. It also supports the modification of a few attributes in a
 safe way that preserves all other EXIF information in the file.
 
-%description -l pl
+%description -l pl.UTF-8
 Libkexif to biblioteka do manipulacji danymi EXIF zawartymi w
-obrazach. Aktualnie wspiera podgl±d wszystkich informacji poprzez
-libexif oraz modyfikacjÍ kilku atrybutÛw przy zachowaniu niezmienno∂ci
-pozosta≥ych.
+obrazach. Aktualnie wspiera podglƒÖd wszystkich informacji poprzez
+libexif oraz modyfikacjƒô kilku atrybut√≥w przy zachowaniu niezmienno≈õci
+pozosta≈Çych.
 
 %package devel
 Summary:	Header files for libkexif development
-Summary(pl):	Pliki nag≥Ûwkowe dla programistÛw uøywaj±cych libkexif
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe dla programist√≥w u≈ºywajƒÖcych libkexif
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-devel >= 9:3.2.0
@@ -40,8 +40,8 @@ Requires:	libexif-devel >= 0.6.9
 %description devel
 Header files for libkexif  development.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe dla programistÛw uøywaj±cych libkexif.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe dla programist√≥w u≈ºywajƒÖcych libkexif.
 
 %prep
 %setup -q
