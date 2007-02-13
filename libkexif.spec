@@ -1,5 +1,5 @@
 Summary:	KDE EXIF Data Handling Library 
-Summary(pl.UTF-8):   Biblioteka obsługi danych z exif w KDE
+Summary(pl.UTF-8):	Biblioteka obsługi danych z exif w KDE
 Name:		libkexif
 Version:	0.2.5
 Release:	1
@@ -31,7 +31,7 @@ pozostałych.
 
 %package devel
 Summary:	Header files for libkexif development
-Summary(pl.UTF-8):   Pliki nagłówkowe dla programistów używających libkexif
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających libkexif
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-devel >= 9:3.2.0
