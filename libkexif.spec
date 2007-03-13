@@ -2,7 +2,7 @@ Summary:	KDE EXIF Data Handling Library
 Summary(pl.UTF-8):	Biblioteka obsługi danych z exif w KDE
 Name:		libkexif
 Version:	0.2.5
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
