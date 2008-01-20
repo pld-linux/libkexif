@@ -2,14 +2,15 @@ Summary:	KDE EXIF Data Handling Library
 Summary(pl.UTF-8):	Biblioteka obsługi danych z exif w KDE
 Name:		libkexif
 Version:	0.2.5
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 # Source0-md5:	a2b933b80deabe57d8515583236ae6ff
+Patch0:		kde-ac260-lt.patch
 URL:		http://extragear.kde.org/apps/kipi/
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1.6.1
 BuildRequires:	gettext-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	libexif-devel >= 0.6.9
@@ -45,6 +46,7 @@ Pliki nagłówkowe dla programistów używających libkexif.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f %{_datadir}/automake/config.sub admin
@@ -65,21 +67,23 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
 
-rm -rf $RPM_BUILD_ROOT/usr/share/locale/is
-
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
-%attr(755,root,root) %{_libdir}/lib*.so.?.?.?
+%attr(755,root,root) %{_libdir}/libkexif.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkexif.so.1
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libkexif.so
+%{_libdir}/libkexif.la
 %{_includedir}/libkexif
 %{_pkgconfigdir}/libkexif.pc
