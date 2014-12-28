@@ -11,7 +11,7 @@ Patch0:		kde-ac260-lt.patch
 URL:		http://extragear.kde.org/apps/kipi/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6.1
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	libexif-devel >= 0.6.9
 BuildRequires:	pkgconfig
